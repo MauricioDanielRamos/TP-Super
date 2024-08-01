@@ -4,18 +4,13 @@ let arrProductos = ["Yerba Playadito por 1 Kg", "Azucar Ledesma x 1 Kg", "Pan x 
 let arrPrecios=[100.25.toFixed(2),50.48.toFixed(2),60.00.toFixed(2),90.23.toFixed(2),80.78.toFixed(2),
     70.20.toFixed(2),90.60.toFixed(2),40.00.toFixed(2),5.15.toFixed(2),20.00.toFixed(2)]; //ayuda del profe Mauri el .tofixed
 let arrStock=[10,5,6,8,7,10,3,4,5,6];
+let arrImagenes=["../images/yerba.jfif", "../images/azucar.jfif", "../images/pan.jfif", "../images/leche.jfif",
+    "../images/carnePicada.jpg", "../images/fideos.jfif", "../images/tomate.jfif", "../images/lechuga.jfif",
+    "../images/papa.jfif", "../images/gaseosa.jfif"];
+    let arrTextAlt=["Yerba Playadito x 1 Kg", "Azucar Ledesma x 1 Kg", "Pan x 1 Kg", "Leche La Serenisima x 1 Lt", 
+        "Carne picada x 1 Kg", "Fideos mostachol Matarazzo x 500 Gr", "Tomate x Kg", "Lechuga x Kg", "Papa x Kg", 
+        "Gaseosa Coca-Cola x 1.5 Lt"]
 
-/*alertaMostrada = false;
-setTimeout(function(){
-    if (!alertaMostrada) {
-        Swal.fire({
-            title: "No te vayas sin ver nuestras ofertas!!!",
-            footer: '<a href="../pages/productos.html">IR A OFERTAS</a>'
-        });
-        alertaMostrada = true; // Actualizamos la bandera para indicar que la alerta ya se mostró
-    }
-}, 25000);
-*/
 
 /*Funcion para mostrar alerta 5 segundos despues de ingresar a la página*/
 /* let intervalo y let i no van declarados por que ya estan declarados en index.js*/
@@ -35,6 +30,25 @@ function cuentaRegre(){
     }, 1000);
 }
 cuentaRegre();
+
+/*Funcion para llenar lista de imagenes*/
+let imagenes = document.querySelectorAll(".image");
+function llenarListaImagenes(arrImagenes, imagenes, textAlt) {
+    for (let i = 0; i < arrImagenes.length; i++) {
+        imagenes[i].src = arrImagenes[i];
+    }
+}
+llenarListaImagenes(arrImagenes, imagenes);
+
+/*Funcion para llenar Alt de imagenes*/
+let textAlt = document.querySelectorAll(".image");
+function llenarAltImagenes(arrTextAlt, textAlt) {
+    for (let i = 0; i < arrTextAlt.length; i++) {
+        textAlt[i].alt = arrTextAlt[i];
+    }
+}
+llenarAltImagenes(arrTextAlt, textAlt);
+
 
 /*Funcion para llenar lista de productos*/
 let items = document.querySelectorAll(".product-item");
@@ -114,23 +128,3 @@ setInterval(() => {
     document.getElementById("div3").classList.toggle("hidden"); /*div1 y div3 comienzan ocultos*/
     document.getElementById("div4").classList.toggle("hidden");
 }, 7000);
-
-
-
-
-/*CODIGO PARA BOTONES DE SUMA Y RESTA DE CADA PRODUCTO- Codigo brindado por Alexis Ullman - Aun no se si lo usare
-
-var botonsuma = document.querySelectorAll("#botonsuma");
-botonsuma.forEach(ele=>ele.addEventListener ("click", (e)=>{
-    e.target.previousElementSibling.value++;
-    let inpCant=e.target.previousElementSibling.value;
-    let pPrecio=e.target.nextElementSibling.innerHTML;
-    let total =inpCant*pPrecio;
-    console.log(pPrecio, inpCant);
-    e.target.nextElementSibling.nextElementSibling.nextElementSibling.children[0].value=total;
-}));
-
-*/
-
-/*Esto no recuerdo porque lo puse aca*/ /*es para cambiar la rutaaaa!!!!*/
-/*window.location.href = "index.html" */ 

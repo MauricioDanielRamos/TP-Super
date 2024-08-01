@@ -51,17 +51,17 @@ Respuestas:
            1- index.html lineas 1 a 66
 
            2-a- productos.html lineas 43 a 72
-           2-b- script.js lineas 1 a 5 y 38 a 54
+           2-b- script.js lineas 1 a 5 y 54 a 60
 
            3- productos.html lineas 73 a 85
 
-           4-a- script.js lineas 61 y 90
-           4-b- script.js lineas 62 y 88
-           4-c- script.js linea 6 y lineas 57 a 64
+           4-a- script.js linea 103
+           4-b- script.js lineas 104
+           4-c- script.js linea 6 y lineas 72 a 79
 
-           5- script.js lineas 74 a 80 y linea 91
+           5- script.js lineas 89 a 95 y linea 106
 
-           6- script.js lineas 98 a 102
+           6- script.js lineas 113 a 117
 
            7- form.html lineas 45 a 51
 
@@ -92,20 +92,20 @@ Respuestas:
           12-b- pendiente
 
 
-          Otros Extras:
+ Otros Extras:
 
-          1- Validacion formulario: form.html lineas 28 a 41
+               1- Validacion formulario: form.html lineas 28 a 41
                                     form.js lineas 13 a 15
 
-          2- Alertas: index.js lineas 1 a 34
-                      script.js lineas 20 a 37
+               2- Alertas: index.js lineas 1 a 34
+                      script.js lineas 17 a 32
                       form.js lineas 34 a 43
 
-         3- Toogle de imagenes: productos.html lineas 21 a 27
-                                script.js lineas 108 a 116
+               3- Toogle de imagenes: productos.html lineas 21 a 27
+                                script.js lineas 123 a 130
 
-         4- Imagenes agregadas en productos.html (tanto de los productos como de propagandas)
+               4- Imagenes y atributo "alt" agregadas en productos a travez de JS
 
-         5- Renovacion de stock luego de una compra: script.js linea 94
+               5- Renovacion de stock luego de una compra: script.js linea 118
 
             
