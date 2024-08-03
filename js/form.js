@@ -25,9 +25,9 @@ btnEnviar.addEventListener("click", (e)=>{
     informacion[4] = "Mensaje: " + textarea.value;
     let blob = new Blob ([informacion] , {type: "text/plain;charset-utf-8"});
     saveAs(blob, "contacto.txt");
-    // Limpiar el formulario
+    // Limpia el formulario
     form.reset();
-    // Redirigir a la página de inicio
+    // Redirige a la página de inicio
     window.location.href = "../index.html";
 });
 

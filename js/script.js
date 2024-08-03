@@ -7,13 +7,13 @@ let arrStock=[10,5,6,8,7,10,3,4,5,6];
 let arrImagenes=["../images/yerba.jfif", "../images/azucar.jfif", "../images/pan.jfif", "../images/leche.jfif",
     "../images/carnePicada.jpg", "../images/fideos.jfif", "../images/tomate.jfif", "../images/lechuga.jfif",
     "../images/papa.jfif", "../images/gaseosa.jfif"];
-    let arrTextAlt=["Yerba Playadito x 1 Kg", "Azucar Ledesma x 1 Kg", "Pan x 1 Kg", "Leche La Serenisima x 1 Lt", 
-        "Carne picada x 1 Kg", "Fideos mostachol Matarazzo x 500 Gr", "Tomate x Kg", "Lechuga x Kg", "Papa x Kg", 
-        "Gaseosa Coca-Cola x 1.5 Lt"]
+let arrTextAlt=["Yerba Playadito x 1 Kg", "Azucar Ledesma x 1 Kg", "Pan x 1 Kg", "Leche La Serenisima x 1 Lt", 
+    "Carne picada x 1 Kg", "Fideos mostachol Matarazzo x 500 Gr", "Tomate x Kg", "Lechuga x Kg", "Papa x Kg", 
+    "Gaseosa Coca-Cola x 1.5 Lt"]
 
 
 /*Funcion para mostrar alerta 5 segundos despues de ingresar a la página*/
-/* let intervalo y let i no van declarados por que ya estan declarados en index.js*/
+/*let intervalo y let i no van declarados por que ya estan declarados en index.js*/
 intervalo = 5;
 i = intervalo;
 function cuentaRegre(){
@@ -86,11 +86,11 @@ function mostrarAlertaCero() {
         text: "La cantidad a ingresar debe ser mayor a 0!"
     });
 }
-function mostrarAlertaStock() {
+function mostrarAlertaStock(producto) { //Muestra el alerta de faltante de stock con el nombre del producto
     Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "No hay suficiente stock!"
+        text: `No hay suficiente stock de ${producto}!`
     });
 }
 
@@ -99,11 +99,11 @@ document.querySelector("button").addEventListener("click", () => {
     let cantidades = document.querySelectorAll("input.stock");
     let total = 0;
     for (let i = 0; i < arrStock.length; i++) {
-        let cantidad = Number(cantidades[i].value);
+        let cantidad = parseInt(cantidades[i].value);  //Con parseInt valida que el numero ingresado sea entero
         if (cantidad < 0) {  // Valida que la cantidad sea mayor a 0
             mostrarAlertaCero();
         } else if ((arrStock[i] - cantidad) < 0) {  // Valida que el stock sea suficiente
-            mostrarAlertaStock();
+            mostrarAlertaStock(arrProductos[i]);    // Pasa el nombre del producto a la funcion
         } else {
             arrStock[i] -= cantidad; // Actualiza el stock después de la compra
             total += cantidad * arrPrecios[i]; // Acumula la totalidad de la compra
